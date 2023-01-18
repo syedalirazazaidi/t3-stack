@@ -3,6 +3,7 @@ import { useState } from "react";
 import "./App.css";
 import Counter from "./components/Counter";
 import Header from "./components/header";
+import List from "./components/List";
 
 function App() {
   const [count, setCount] = useState<number>(10);
@@ -14,6 +15,10 @@ function App() {
       <h1>Hello</h1>
       <Header title={"Vite"} />
       <Counter count={count} setCount={setCount} addItem={addItem} />
+      <List
+        items={["ali", "raza"]}
+        render={(item: string) => <span>{item}</span>}
+      />
     </div>
   );
 }

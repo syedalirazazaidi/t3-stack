@@ -1,12 +1,16 @@
-import * as React from 'react';
+import { ReactNode } from "react";
 
-export interface IAppProps {
+interface IAppProps<T> {
+  items: T[];
+  render: (item: T) => ReactNode;
 }
 
-export default function App (props: IAppProps) {
+export default function List<T>({ items, render }: IAppProps<T>) {
   return (
-    <div>
-      
-    </div>
+    <ul>
+      {items.map((item, i) => (
+        <li key={i}>{render(item)}</li>
+      ))}
+    </ul>
   );
 }
