@@ -55,58 +55,58 @@ const productState: OurProduct = {
   ],
 };
 const initialState = {
-  myproduct: productState,
-  isError: false,
-  isSuccess: false,
-  isLoading: false,
-  message: "",
+  allproduct: productState,
+  product: [],
+  //   isError: false,
+  //   isSuccess: false,
+  //   isLoading: false,
+  //   message: "",
 };
 
 // Get user goals
-export const getAllProduct: any = createAsyncThunk(
-  "product/getAll",
-  async (_, thunkAPI) => {
-    console.log("first");
-    try {
-      const mydata = await productService.getProduct();
-      console.log(mydata, "mydat???a");
-      return mydata;
-    } catch (error) {
-      console.log(error, "ERRROR");
-      //   const message =
-      //     (error.response &&
-      //       error.response.data &&
-      //       error.response.data.message) ||
-      //     error.message ||
-      //     error.toString();
-      //   return thunkAPI.rejectWithValue(message);
-    }
-  }
-);
+// export const getAllProduct: any = createAsyncThunk(
+//   "product/getAll",
+//   async (_, thunkAPI) => {
+//     try {
+//       const mydata = await productService.getProduct();
+//       console.log(mydata, "mydat???a");
+//       return mydata;
+//     } catch (error) {
+//       console.log(error, "ERRROR");
+//         const message =
+//           (error.response &&
+//             error.response.data &&
+//             error.response.data.message) ||
+//           error.message ||
+//           error.toString();
+//         return thunkAPI.rejectWithValue(message);
+//     }
+//   }
+// );
 export const productSlice = createSlice({
   name: "product",
   initialState,
   reducers: {
-    reset: (state) => initialState,
+    // reset: (state) => initialState,
   },
-  extraReducers: (builder) => {
-    builder
+  //   extraReducers: (builder) => {
+  //     builder
 
-      .addCase(getAllProduct.pending, (state) => {
-        state.isLoading = true;
-      })
-      .addCase(getAllProduct.fulfilled, (state, action) => {
-        state.isLoading = false;
-        state.isSuccess = true;
-        state.myproduct = action.payload;
-      })
-      .addCase(getAllProduct.rejected, (state, action) => {
-        state.isLoading = false;
-        state.isError = true;
-        // state.message = action.payload;
-      });
-  },
+  //       .addCase(getAllProduct.pending, (state) => {
+  //         state.isLoading = true;
+  //       })
+  //       .addCase(getAllProduct.fulfilled, (state, action) => {
+  //         state.isLoading = false;
+  //         state.isSuccess = true;
+  //         state.myproduct = action.payload;
+  //       })
+  //       .addCase(getAllProduct.rejected, (state, action) => {
+  //         state.isLoading = false;
+  //         state.isError = true;
+  //         // state.message = action.payload;
+  //       });
+  //   },
 });
 
-export const { reset } = productSlice.actions;
+// export const { reset } = productSlice.actions;
 export default productSlice.reducer;
