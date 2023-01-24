@@ -4,6 +4,7 @@ export interface Products {
   description: string;
   imageUrl: string;
   price: number;
+  quantity: number;
 }
 
 export interface OurProduct {
