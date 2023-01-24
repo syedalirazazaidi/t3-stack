@@ -11,23 +11,26 @@ export interface IAppProps {}
 
 export default function ProductList(props: IAppProps) {
   //   const navigate = useNavigate();
+
   const dispatch = useDispatch();
   const myproductnew = useSelector(
     (state: RootState) => state.product.allproduct.products
   );
-  const addtocart = (id: number) => {
+  const addtocart = (prod: any) => {
+    const { id, name, price, imageUrl, description, quantity } = prod;
+
     dispatch(
       addToProduct({
         id,
+        name,
+        price,
+        imageUrl,
+        description,
+        quantity,
       })
     );
   };
-  React.useEffect(() => {
-    // dispatch(getAllProduct());
-    // return () => {
-    //   dispatch(reset());
-    // };
-  }, []);
+
   return (
     <Grid templateColumns="repeat(4, 2fr)" gap={8} marginTop="40px" mx="210px">
       {myproductnew?.map((prod: Products) => (
@@ -39,7 +42,7 @@ export default function ProductList(props: IAppProps) {
           }}
           w="180px"
           h="210px"
-          onClick={() => addtocart(prod.id)}
+          onClick={() => addtocart(prod)}
         >
           <div style={{ display: "flex", gap: "25px", cursor: "pointer" }}>
             <p>{prod.price}</p>

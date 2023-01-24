@@ -85,16 +85,15 @@ export const productSlice = createSlice({
   name: "product",
   initialState,
   reducers: {
-    addToProduct: (state, action: any) => {
-      state.cartproduct.push(action.payload.id);
-      // const itemInCart = state.allproduct.find(
-      //   (item) => item.id === action.payload.id
-      // );
-      // if (itemInCart) {
-      //   itemInCart.quantity++;
-      // } else {
-      //   state.cart.push({ ...action.payload, quantity: 1 });
-      // }
+    addToProduct: (state: any, action: PayloadAction<Products>) => {
+      const itemInCart = state.cartproduct.find(
+        (item: any) => item.id === action.payload.id
+      );
+      if (itemInCart) {
+        itemInCart.quantity++;
+      } else {
+        state.cartproduct.push({ ...action.payload, quantity: 1 });
+      }
     },
   },
   //   extraReducers: (builder) => {
