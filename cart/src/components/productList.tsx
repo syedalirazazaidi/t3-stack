@@ -1,4 +1,4 @@
-import { Grid, GridItem } from "@chakra-ui/react";
+import { Button, Grid, GridItem } from "@chakra-ui/react";
 import * as React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -42,7 +42,6 @@ export default function ProductList(props: IAppProps) {
           }}
           w="180px"
           h="210px"
-          onClick={() => addtocart(prod)}
         >
           <div style={{ display: "flex", gap: "25px", cursor: "pointer" }}>
             <p>{prod.price}</p>
@@ -53,6 +52,7 @@ export default function ProductList(props: IAppProps) {
             src={prod.imageUrl}
             alt="myimage"
           />
+          <Button onClick={() => addtocart(prod)}>Add to cart</Button>
         </GridItem>
       ))}
     </Grid>
