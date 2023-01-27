@@ -8,9 +8,11 @@ app.use(cors())
 require('dotenv').config()
 
 const Stripe = stripe(process.env.STRIPE_KEY)
-console.log(Stripe, 'STRIP')
-const router = express.Router()
 
+const router = express.Router()
+app.get('/', (req, res) => {
+  res.send('IT WORK AT')
+})
 // app.post('/create-checkout-session', async (req, res) => {
 //   const session = await stripe.checkout.sessions.create({
 //     line_items: [
@@ -31,7 +33,7 @@ const router = express.Router()
 const port = process.env.PORT || 5000
 const uri = process.env.DB_URI
 
-app.listen(port, () => console.log('Running on port 4242'))
+app.listen(port, () => console.log('Running on port 5000'))
 
 mongoose
   .connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
