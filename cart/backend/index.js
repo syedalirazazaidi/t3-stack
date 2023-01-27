@@ -2,6 +2,7 @@ const express = require('express')
 const cors = require('cors')
 const mongoose = require('mongoose')
 const stripe = require('stripe')
+const { randomUUID } = require('uuid')
 
 const app = express()
 app.use(cors())
@@ -13,23 +14,33 @@ const router = express.Router()
 app.get('/', (req, res) => {
   res.send('IT WORK AT')
 })
-// app.post('/create-checkout-session', async (req, res) => {
-//   const session = await stripe.checkout.sessions.create({
-//     line_items: [
-//       {
-//         // Provide the exact Price ID (for example, pr_1234) of the product you want to sell
-//         // price: '{{PRICE_ID}}',
-//         quantity: 1,
-//       },
-//     ],
-//     mode: 'payment',
-//     success_url: `${YOUR_DOMAIN}/success.html`,
-//     cancel_url: `${YOUR_DOMAIN}/cancel.html`,
-//   })
-//   //   devstrapi
+app.post('/payment', async (req, res) => {
+  const { product, token } = req.body()
+  console.log(product,'PROD')
+  console.log(token,'token')
+  const ideKey = uuid()
+  const session = await stripe.customers.create({
+    email: 'customer@example.com',
+    source: token.id
 
-//   res.redirect(303, session.url)
-// })
+  }).then(customer => {
+
+    Stripe.charges.create({
+      amount: product.price,
+
+      currency: 'usd',
+      customer: customer.id,
+      receipt_email: token.email,
+      description: `purchase of product name`,
+      shipping:{
+        name:token.card.name,
+        address:{
+          country:token.card.address_country
+        }
+      }
+    }, { ideKey })
+  }).then(result => res.status(200).json(result)).catch(err => console.log(err))
+})
 const port = process.env.PORT || 5000
 const uri = process.env.DB_URI
 
