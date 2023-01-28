@@ -13,6 +13,7 @@ const stripe = require('stripe')(
 const router = express.Router()
 
 router.post('/payement', async (req, res) => {
+  res.json({ url: 'Hi' })
   console.log(req.body, 'BODY')
   const cartnewProps = req.body.items
   console.log(cartnewProps, '???')

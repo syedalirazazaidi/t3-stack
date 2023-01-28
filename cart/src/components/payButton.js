@@ -7,22 +7,33 @@ const stripeKey = process.env.REACT_APP_KEY
 function PayButton({ cartnewProps }) {
   const handleCheckout = async () => {
     console.log(cartnewProps, 'Props')
+    // axios.post('http://localhost:8080/api/stripe/payement', {
+    //   items: cartnewProps,
+    // })
     await fetch
-      .post(`http://localhost:5000/stripe/payement`, {
+      .post('http://localhost:8080/api/stripe/payement', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ items: cartnewProps }),
+        body: JSON.stringify({
+          items: [
+            { id: 1, quantity: 3 },
+            { id: 2, quantity: 1 },
+          ],
+        }),
       })
       .then((response) => {
-        return response.json()
+        if (response.ok) return response.json()
+        return response.json().then((json) => Promise.reject(json))
       })
-      .then((response) => {
-        if (response.url) {
-          window.location.assign(response.url)
-        }
+      .then(({ url }) => {
+        console.log(url)
+        // if (response.url) {
+        //   window.location.assign(response.url)
+        // }
       })
+      .catch((err) => console.error(err.error))
   }
   return <Button onClick={() => handleCheckout()}>Check out</Button>
 }
