@@ -7,11 +7,14 @@ require('dotenv').config()
 // app.use(cors())
 // const mongoose = require('mongoose')
 // const stripe = Stripe(process.env.STRIPE_KEY)
-const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY)
+const stripe = require('stripe')(
+  'sk_test_51MUngIEqp60OUVoTFU6L7nc11EHlOzG8xLwznczkRxqdGadk7QowK3t8fkJjXlL2mwkdVUuVdBkoCRpO91euzpNB00AIUPcn1K',
+)
 const router = express.Router()
 
 router.post('/payement', async (req, res) => {
-  const { cartnewProps } = req.body
+  console.log(req.body, 'BODY')
+  const cartnewProps = req.body.items
   console.log(cartnewProps, '???')
 
   // Create a PaymentIntent with the order amount and currency
@@ -29,11 +32,15 @@ router.post('/payement', async (req, res) => {
       },
     ],
     mode: 'payment',
-    success_url: `${process.env.CLIENT_URL}/checkout-success`,
-    cancel_url: `${process.env.CLIENT_URL}/cart`,
+    success_url: `http://localhost:3000/success`,
+    cancel_url: `${process.env.CLIENT_URL}/cancel`,
   })
 
-  res.send({ url: session.url })
+  res.send(
+    JSON.stringify({
+      url: session.url,
+    }),
+  )
 })
 
 module.exports = router

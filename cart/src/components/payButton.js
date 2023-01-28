@@ -2,26 +2,26 @@
 
 import { Button } from '@chakra-ui/react'
 import axios from 'axios'
-const url = 'http://localhost:3000'
+const url = 'http://localhost:5000'
 const stripeKey = process.env.REACT_APP_KEY
 function PayButton({ cartnewProps }) {
-  console.log(cartnewProps, 'Props')
   const handleCheckout = async () => {
+    console.log(cartnewProps, 'Props')
     await fetch
-      .post(`${url}/stripe/payement`, {
+      .post(`http://localhost:5000/stripe/payement`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({ items: cartnewProps }),
       })
-      .then((res) => {
-        if (res.data) {
-          window.location.href = res.data
-        }
+      .then((response) => {
+        return response.json()
       })
-      .catch((err) => {
-        console.log(err.message, 'ERROR')
+      .then((response) => {
+        if (response.url) {
+          window.location.assign(response.url)
+        }
       })
   }
   return <Button onClick={() => handleCheckout()}>Check out</Button>
