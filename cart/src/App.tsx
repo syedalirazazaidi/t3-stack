@@ -24,11 +24,11 @@ function App() {
         justifyContent="right"
         flexDirection={"column"}
       >
-        <Header viewCart={viewCart} setViewCart={setViewCart} />
         {/* <Nav /> */}
       </Flex>
       {/* {pageContent} */}
       <BrowserRouter>
+        <Header viewCart={viewCart} setViewCart={setViewCart} />
         <Routes>
           <Route index element={<ProductList />} />
           <Route path="cart" element={<Cart />} />
