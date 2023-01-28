@@ -1,36 +1,39 @@
-import express from 'express'
-import cors from 'cors'
-import Stripe from 'stripe'
+const express = require('express')
+const cors = require('cors')
 require('dotenv').config()
-const app = express()
-app.use(cors())
-const mongoose = require('mongoose')
-const stripe = Stripe(process.env.STRIPE_KEY)
+// const app = express()
+
+// const Stripe = require('stripe')
+// app.use(cors())
+// const mongoose = require('mongoose')
+// const stripe = Stripe(process.env.STRIPE_KEY)
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY)
 const router = express.Router()
 
-// app.post('/create-checkout-session', async (req, res) => {
-//   const session = await stripe.checkout.sessions.create({
-//     line_items: [
-//       {
-//         // Provide the exact Price ID (for example, pr_1234) of the product you want to sell
-//         // price: '{{PRICE_ID}}',
-//         quantity: 1,
-//       },
-//     ],
-//     mode: 'payment',
-//     success_url: `${YOUR_DOMAIN}/success.html`,
-//     cancel_url: `${YOUR_DOMAIN}/cancel.html`,
-//   })
-//   //   devstrapi
+router.post('/payement', async (req, res) => {
+  const { cartnewProps } = req.body
+  console.log(cartnewProps, '???')
 
-//   res.redirect(303, session.url)
-// })
-const port = process.env.PORT || 5000
-const uri = process.env.DB_URI
+  // Create a PaymentIntent with the order amount and currency
+  const session = await stripe.checkout.sessions.create({
+    line_items: [
+      {
+        price_date: {
+          currency: 'usd',
+          product_data: {
+            name: 'T-shirt',
+          },
+          unit_amount: 2000,
+        },
+        quantity: 1,
+      },
+    ],
+    mode: 'payment',
+    success_url: `${process.env.CLIENT_URL}/checkout-success`,
+    cancel_url: `${process.env.CLIENT_URL}/cart`,
+  })
 
-app.listen(port, () => console.log('Running on port 4242'))
+  res.send({ url: session.url })
+})
 
-mongoose
-  .connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => console.log('mongodb connection successfull'))
-  .catch((error) => console.log('mongodb conection failed', error.message))
+module.exports = router

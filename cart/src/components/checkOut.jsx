@@ -1,7 +1,7 @@
-import React from "react";
+// import React from "react";
 
-function CheckOut() {
-  return <div>CheckOut</div>;
-}
+// function PayButton() {
+//   return <div>PayButton</div>;
+// }
 
-export default CheckOut;
+// export default PayButton;

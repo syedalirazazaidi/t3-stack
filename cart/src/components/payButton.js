@@ -1,12 +1,30 @@
-import { Button } from '@chakra-ui/react'
-import React from 'react'
+// 'pk_test_51MUngIEqp60OUVoTGHpZrJVDmILPzv59laVyke5nImqMSrsB939ozADltTFmwTxDNvuBmYpcQmg1hymdHpMWVhzZ00JQm51gJS',
 
-function PayButton() {
-  return (
-    <Button padding="30px 60px" bg="red.100">
-      Checkout
-    </Button>
-  )
+import { Button } from '@chakra-ui/react'
+import axios from 'axios'
+const url = 'http://localhost:3000'
+const stripeKey = process.env.REACT_APP_KEY
+function PayButton({ cartnewProps }) {
+  console.log(cartnewProps, 'Props')
+  const handleCheckout = async () => {
+    await fetch
+      .post(`${url}/stripe/payement`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ items: cartnewProps }),
+      })
+      .then((res) => {
+        if (res.data) {
+          window.location.href = res.data
+        }
+      })
+      .catch((err) => {
+        console.log(err.message, 'ERROR')
+      })
+  }
+  return <Button onClick={() => handleCheckout()}>Check out</Button>
 }
 
 export default PayButton

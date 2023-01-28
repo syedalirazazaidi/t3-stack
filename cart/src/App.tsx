@@ -6,9 +6,12 @@ import Cart from "./components/cart";
 import Header from "./components/header";
 import Footer from "./components/footer";
 import Nav from "./components/Nav";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Success from "./components/Success";
+import Cancel from "./components/Cancel";
 function App() {
   const [viewCart, setViewCart] = useState<boolean>(false);
-  const pageContent = viewCart ? <Cart /> : <ProductList />;
+  // const pageContent = viewCart ? <Cart /> : <ProductList />;
   const content = (
     <Box>
       <Flex
@@ -22,9 +25,17 @@ function App() {
         flexDirection={"column"}
       >
         <Header viewCart={viewCart} setViewCart={setViewCart} />
-        <Nav viewCart={viewCart} setViewCart={setViewCart} />
+        {/* <Nav /> */}
       </Flex>
-      {pageContent}
+      {/* {pageContent} */}
+      <BrowserRouter>
+        <Routes>
+          <Route index element={<ProductList />} />
+          <Route path="cart" element={<Cart />} />
+          <Route path="success" element={<Success />} />
+          <Route path="cancel" element={<Cancel />} />
+        </Routes>
+      </BrowserRouter>
       <Footer viewCart={viewCart} />
     </Box>
   );

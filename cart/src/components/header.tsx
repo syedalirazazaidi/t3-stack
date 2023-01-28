@@ -1,5 +1,6 @@
-import { Text, Box } from "@chakra-ui/react";
+import { Text, Box, Button } from "@chakra-ui/react";
 import * as React from "react";
+import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { RootState } from "../app/store";
 import { Products } from "../types";
@@ -21,7 +22,7 @@ export default function Header({ viewCart, setViewCart }: IAppProps) {
     });
     return { totalPrice, totalQuantity };
   };
-  console.log(getTotal().totalPrice, "FUNC");
+
   return (
     <Box>
       <Text marginRight={"90px"} textAlign={"right"}>
@@ -30,6 +31,12 @@ export default function Header({ viewCart, setViewCart }: IAppProps) {
       <Text marginRight={"90px"} textAlign={"right"}>
         Total Price :{getTotal().totalPrice}
       </Text>
+      <Button bg="blue" onClick={(event) => (window.location.href = "/cart")}>
+        Show Cart
+      </Button>
+      <Button bg="blue" onClick={(event) => (window.location.href = "/")}>
+        Show Product
+      </Button>
     </Box>
   );
 }
