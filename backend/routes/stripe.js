@@ -7,9 +7,7 @@ require('dotenv').config()
 // app.use(cors())
 // const mongoose = require('mongoose')
 // const stripe = Stripe(process.env.STRIPE_KEY)
-const stripe = require('stripe')(
-  'sk_test_51MUngIEqp60OUVoTFU6L7nc11EHlOzG8xLwznczkRxqdGadk7QowK3t8fkJjXlL2mwkdVUuVdBkoCRpO91euzpNB00AIUPcn1K',
-)
+
 const router = express.Router()
 
 router.post('/payement', async (req, res) => {

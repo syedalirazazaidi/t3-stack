@@ -6,9 +6,7 @@ const { randomUUID } = require('uuid')
 const stripenew = require('./routes/stripe')
 require('dotenv').config()
 const app = express()
-// const stripe = require('stripe')(
-//   'sk_test_51MUngIEqp60OUVoTFU6L7nc11EHlOzG8xLwznczkRxqdGadk7QowK3t8fkJjXlL2mwkdVUuVdBkoCRpO91euzpNB00AIUPcn1K',
-// )
+
 const stripe = Stripe(process.env.STRIPE_KEY)
 const uuid = require('uuid').v4
 app.use(cors())
@@ -48,7 +46,7 @@ app.post('/api/checkout', async (req, res) => {
     cancel_url: 'http://localhost:3000/cancel',
   })
 
-  res.redirect(303, session.url)
+  res.json({ url: session.url })
 })
 
 const port = process.env.PORT || 5000
