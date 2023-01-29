@@ -5,7 +5,7 @@ import productService from "./cartService";
 const productState: OurProduct = {
   products: [
     {
-      id: 0,
+      id: "price_1MVKozEqp60OUVoTBT2PiT4l",
       name: "iPhone 6S",
       description:
         "Kogi skateboard tattooed, whatever portland fingerstache coloring book mlkshk leggings flannel dreamcatcher.",
@@ -15,7 +15,7 @@ const productState: OurProduct = {
       quantity: 1,
     },
     {
-      id: 1,
+      id: "price_1MVL24Eqp60OUVoTygzmnt0d",
       name: "iPhone 5S",
       description:
         "Kogi skateboard tattooed, whatever portland fingerstache coloring book mlkshk leggings flannel dreamcatcher.",
@@ -25,53 +25,13 @@ const productState: OurProduct = {
       quantity: 1,
     },
     {
-      id: 2,
+      id: "price_1MVL2kEqp60OUVoTaPozMRGr",
       name: "Macbook",
       description:
         "Kogi skateboard tattooed, whatever portland fingerstache coloring book mlkshk leggings flannel dreamcatcher.",
       imageUrl:
         "https://plus.unsplash.com/premium_photo-1663091581455-5d6002274746?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fGdhcmRlbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600&q=60",
       price: 1499,
-      quantity: 1,
-    },
-    {
-      id: 3,
-      name: "Macbook Air",
-      description:
-        "Kogi skateboard tattooed, whatever portland fingerstache coloring book mlkshk leggings flannel dreamcatcher.",
-      imageUrl:
-        "https://images.unsplash.com/photo-1550948390-6eb7fa773072?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fGdhcmRlbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600&q=60",
-      price: 999,
-      quantity: 1,
-    },
-    {
-      id: 4,
-      name: "Macbook Air 2013",
-      description:
-        "Kogi skateboard tattooed, whatever portland fingerstache coloring book mlkshk leggings flannel dreamcatcher.",
-      imageUrl:
-        "https://images.unsplash.com/photo-1444392061186-9fc38f84f726?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjh8fGdhcmRlbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600&q=60",
-      price: 599,
-      quantity: 1,
-    },
-    {
-      id: 5,
-      name: "Macbook Air 2012",
-      description:
-        "Kogi skateboard tattooed, whatever portland fingerstache coloring book mlkshk leggings flannel dreamcatcher.",
-      imageUrl:
-        "https://images.unsplash.com/photo-1557429287-b2e26467fc2b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzV8fGdhcmRlbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600&q=60",
-      price: 499,
-      quantity: 1,
-    },
-    {
-      id: 6,
-      name: "iPhone 6S",
-      description:
-        "Kogi skateboard tattooed, whatever portland fingerstache coloring book mlkshk leggings flannel dreamcatcher.",
-      imageUrl:
-        "https://images.unsplash.com/photo-1548382141-dc4c16fc7f25?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTZ8fGdhcmRlbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600&q=60",
-      price: 799,
       quantity: 1,
     },
   ],
