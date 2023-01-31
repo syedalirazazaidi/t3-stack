@@ -30,7 +30,7 @@ router.post('/payement', async (req, res) => {
         quantity: 1,
       },
     ],
-    mode: 'payment',
+    mode: 'subscription',
     success_url: `http://localhost:3000/success`,
     cancel_url: `${process.env.CLIENT_URL}/cancel`,
   })
