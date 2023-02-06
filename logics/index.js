@@ -56,15 +56,23 @@
 
 // count the positive sum the negative
 
-const addnew = [1, 2, 3, -1, -2, -3]
-var count = 0
-var add = 0
-for (let index = 0; index < addnew.length; index++) {
-  const element = addnew[index]
-  if (element >= 0) {
-    count++
-  } else {
-    add += element
-  }
-}
-console.log(count, '', add)
+// const addnew = [1, 2, 3, -1, -2, -3]
+// var count = 0
+// var add = 0
+// for (let index = 0; index < addnew.length; index++) {
+//   const element = addnew[index]
+//   if (element >= 0) {
+//     count++
+//   } else {
+//     add += element
+//   }
+// }
+// console.log(count, '', add)
+const string = 'word'
+
+// Option 1
+const newarr = string
+  .split('')
+  .map((i) => i.repeat(2))
+  .join('')
+console.log(newarr)
