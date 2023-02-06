@@ -49,7 +49,22 @@
 // newnumb = numb.toString().split('').reverse()
 // const humn = newnumb.map((i) => Number(i))
 // console.log(humn)
-function fuNam(params) {
-  return params > 0 ? -params : -params
+// function fuNam(params) {
+//   return params > 0 ? -params : -params
+// }
+// console.log(fuNam(47))
+
+// count the positive sum the negative
+
+const addnew = [1, 2, 3, -1, -2, -3]
+var count = 0
+var add = 0
+for (let index = 0; index < addnew.length; index++) {
+  const element = addnew[index]
+  if (element >= 0) {
+    count++
+  } else {
+    add += element
+  }
 }
-console.log(fuNam(47))
+console.log(count, '', add)
