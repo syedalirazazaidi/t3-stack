@@ -68,11 +68,29 @@
 //   }
 // }
 // console.log(count, '', add)
-const string = 'word'
+// const string = 'word'
 
-// Option 1
-const newarr = string
-  .split('')
-  .map((i) => i.repeat(2))
-  .join('')
+// // Option 1
+// const newarr = string
+//   .split('')
+//   .map((i) => i.repeat(2))
+//   .join('')
+// console.log(newarr)
+
+function squareRoot(arr) {
+  //   const arr = [6, 6, 4, 1, 2, 4]
+  var newwarr = []
+  for (let index = 0; index < arr.length; index++) {
+    const element = arr[index]
+
+    const newaa = Math.sqrt(element)
+    if (Number.isInteger(newaa)) {
+      newwarr.push(newaa)
+    } else {
+      newwarr.push(element * element)
+    }
+  }
+  return newwarr
+}
+const newarr = squareRoot([3, 5, 7, 1, 2, 4])
 console.log(newarr)
