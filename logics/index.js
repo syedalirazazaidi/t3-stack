@@ -77,20 +77,43 @@
 //   .join('')
 // console.log(newarr)
 
-function squareRoot(arr) {
-  //   const arr = [6, 6, 4, 1, 2, 4]
-  var newwarr = []
-  for (let index = 0; index < arr.length; index++) {
-    const element = arr[index]
+// function squareRoot(arr) {
+//   //   const arr = [6, 6, 4, 1, 2, 4]
+//   var newwarr = []
+//   for (let index = 0; index < arr.length; index++) {
+//     const element = arr[index]
 
-    const newaa = Math.sqrt(element)
-    if (Number.isInteger(newaa)) {
-      newwarr.push(newaa)
-    } else {
-      newwarr.push(element * element)
-    }
+//     const newaa = Math.sqrt(element)
+//     if (Number.isInteger(newaa)) {
+//       newwarr.push(newaa)
+//     } else {
+//       newwarr.push(element * element)
+//     }
+//   }
+//   return newwarr
+// }
+// const newarr = squareRoot([3, 5, 7, 1, 2, 4])
+// console.log(newarr)
+
+// function countBy(params, param1) {
+//   const newparams = []
+//   for (var index = 0; index < param1; index++) {
+//     newparams.push(params * param1)
+//   }
+//   console.log(newparams, 'LL')
+// }
+
+// countBy(1, 10)
+// invert the number
+
+const arr = [-1, 2, -3, 4, -5]
+const newarr = []
+for (let index = 0; index < arr.length; index++) {
+  const element = arr[index]
+  if (element <= 0) {
+    newarr.push(-element)
+  } else if (element >= 0) {
+    newarr.push(-element)
   }
-  return newwarr
 }
-const newarr = squareRoot([3, 5, 7, 1, 2, 4])
 console.log(newarr)
