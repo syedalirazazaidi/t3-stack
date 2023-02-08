@@ -106,14 +106,14 @@
 // countBy(1, 10)
 // invert the number
 
-const arr = [-1, 2, -3, 4, -5]
-const newarr = []
-for (let index = 0; index < arr.length; index++) {
-  const element = arr[index]
-  if (element <= 0) {
-    newarr.push(-element)
-  } else if (element >= 0) {
-    newarr.push(-element)
-  }
-}
-console.log(newarr)
+// const arr = [-1, 2, -3, 4, -5]
+// const newarr = []
+// for (let index = 0; index < arr.length; index++) {
+//   const element = arr[index]
+//   if (element <= 0) {
+//     newarr.push(-element)
+//   } else if (element >= 0) {
+//     newarr.push(-element)
+//   }
+// }
+// console.log(newarr)
