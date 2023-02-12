@@ -166,3 +166,12 @@
 // background-position:  10px 0, 10px 0, 0 0, 0 0;
 // background-size: 20px 20px;
 // background-repeat: repeat;
+
+var mynumb = [1, 2, 3, 4, 5, 6, 7, 18, 19, 20]
+for (let index = 0; index < mynumb.length - 1; index++) {
+  if (mynumb[index + 1] - mynumb[index] == 1) {
+    console.log('all the array are  concecutive')
+  } else {
+    console.log('first', mynumb[index])
+  }
+}
