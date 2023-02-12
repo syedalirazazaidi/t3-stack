@@ -117,3 +117,52 @@
 //   }
 // }
 // console.log(newarr)
+// const a = 14
+// const b = 2
+// console.log(a / b)
+
+// function race(params) {
+//   return Math.floor(params / 4)
+// }
+// const newrace = race(11.8)
+// console.log(newrace)
+// consvert number into String
+// const numb = 4
+// numb.toString()
+// console.log(typeof numb.toString())
+// const namemy = 'aliraza'
+// console.log(namemy.charAt(0))
+
+// const arr1 = ['ali', 'keep', 'ali', 'keep']
+// var newarri = []
+// var newemp = []
+// arr1.map((newon1) =>
+//   newon1 === 'ali' ? newarri.push(newon1) : newemp.push(newon1),
+// )
+// console.log(newarri)
+// console.log(newemp)
+// for (let index = 0; index < arr1.length; index++) {
+//   const element = arr1[index]
+//   if (element !== 'ali') {
+//     newarri.push(element)
+//   }
+// }
+// console.log(newarri)
+// console.log(arr1)
+
+// find the first elementin the array are not consecutive
+
+// var mynumb = [1, 2, 3, 4, 5, 6, 7, 18, 19, 20]
+// for (let index = 0; index < mynumb.length - 1; index++) {
+//   if (mynumb[index + 1] - mynumb[index] == 1) {
+//     console.log(mynumb[index])
+//   } else {
+//   }
+// }
+
+// background-color: #e5e5f7;
+// opacity: 0.3;
+// background-image:  linear-gradient(135deg, #444cf7 25%, transparent 25%), linear-gradient(225deg, #444cf7 25%, transparent 25%), linear-gradient(45deg, #444cf7 25%, transparent 25%), linear-gradient(315deg, #444cf7 25%, #e5e5f7 25%);
+// background-position:  10px 0, 10px 0, 0 0, 0 0;
+// background-size: 20px 20px;
+// background-repeat: repeat;
