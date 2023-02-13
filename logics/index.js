@@ -167,11 +167,32 @@
 // background-size: 20px 20px;
 // background-repeat: repeat;
 
-var mynumb = [1, 2, 3, 4, 5, 6, 7, 18, 19, 20]
-for (let index = 0; index < mynumb.length - 1; index++) {
-  if (mynumb[index + 1] - mynumb[index] == 1) {
-    console.log('all the array are  concecutive')
-  } else {
-    console.log('first', mynumb[index])
-  }
-}
+// var mynumb = [1, 2, 3, 4, 5, 6, 7, 18, 19, 20]
+// for (let index = 0; index < mynumb.length - 1; index++) {
+//   if (mynumb[index + 1] - mynumb[index] == 1) {
+//     console.log('all the array are  concecutive')
+//   } else {
+//     console.log('first', mynumb[index])
+//   }
+// }
+
+// var num = 240
+// const strnew = ''
+// var str = String(num)
+const arr1 = [3, 4, 5]
+const arr2 = [3, 0, 8]
+console.log(arr1.concat(arr2))
+
+// console.log(str.indexOf(0))
+// for (let index = str.length; index >= 0; index--) {
+//   const element = str[index]
+//   if (element === 0) {
+//   }
+// }
+// for (let index = 0; index < str.length; index++) {
+//   const element = str[index]
+//   console.log(str.lastIndexOf(element) !== 0)
+//   console.log(first)
+//   strnew += element
+// }
+// console.log(strnew)
