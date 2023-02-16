@@ -179,9 +179,9 @@
 // var num = 240
 // const strnew = ''
 // var str = String(num)
-const arr1 = [3, 4, 5]
-const arr2 = [3, 0, 8]
-console.log(arr1.concat(arr2))
+// const arr1 = [3, 4, 5]
+// const arr2 = [3, 0, 8]
+// console.log(arr1.concat(arr2))
 
 // console.log(str.indexOf(0))
 // for (let index = str.length; index >= 0; index--) {
@@ -196,3 +196,25 @@ console.log(arr1.concat(arr2))
 //   strnew += element
 // }
 // console.log(strnew)
+
+function quickSort(params) {
+  //   console.log(params.sort())
+  const sortass = []
+  //   console.log([4,])
+  const desce = []
+  //   console.log([5])
+  for (let index = 0; index < params.length; index++) {
+    const element = params[index]
+    const elementNew = params[params.length - 1]
+    console.log(element, '00', elementNew)
+    if (element < elementNew) {
+      desce.push(element)
+    } else {
+      sortass.push(elementNew)
+    }
+  }
+  return [...sortass, ...desce]
+}
+const arr = [4, 5, 6, 1, 10]
+// unshift from start ---- push from end
+console.log(quickSort(arr), '???')
