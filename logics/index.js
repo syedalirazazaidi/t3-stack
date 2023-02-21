@@ -289,8 +289,41 @@
 // }
 // myFunction(6, 2, 1, 4, 2, 3)
 
-function myFunction(a, b) {
-  console.log(a + b)
-}
+// function myFunction(a, b) {
+//   //   console.log(b.length !== 1 ? `'${a + b}'` : `'${b + a}'`)
+//   console.log(a.indexOf(b))
+// }
 
-myFunction('cheese', 'cake')
+// myFunction('cheese', 'cake')
+// myFunction('lips', 's')
+// myFunction(' think, therefore I am', 'I')
+// myFunction('Java', 'script')
+
+// function myFunction(a) {
+//   console.log(a % 2 === 0)
+// }
+// myFunction(-4)
+function myFunction(a, b) {
+  console.log(b.split(a).length - 1)
+  return b.split(a).length - 1
+
+  //   var count = 0
+  //   for (let index = 0; index < b.length; index++) {
+  //     const element = b[index]
+  //     if (element === a) {
+  //       count++
+  //     }
+  //   }
+  //   return count
+}
+const mynew = myFunction(
+  'm',
+  'how many times does the character occur in this sentence?',
+)
+// console.log(mynew)
+// myFunction('h', 'how many times does the character occur in this sentence?')
+// const hid = myFunction(
+//   'z',
+//   'how many times does the character occur in this sentence?',
+// )
+// console.log(hid)
