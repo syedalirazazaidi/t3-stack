@@ -197,24 +197,75 @@
 // }
 // console.log(strnew)
 
-function quickSort(params) {
-  //   console.log(params.sort())
-  const sortass = []
-  //   console.log([4,])
-  const desce = []
-  //   console.log([5])
-  for (let index = 0; index < params.length; index++) {
-    const element = params[index]
-    const elementNew = params[params.length - 1]
-    console.log(element, '00', elementNew)
-    if (element < elementNew) {
-      desce.push(element)
-    } else {
-      sortass.push(elementNew)
-    }
-  }
-  return [...sortass, ...desce]
-}
-const arr = [4, 5, 6, 1, 10]
-// unshift from start ---- push from end
-console.log(quickSort(arr), '???')
+// function quickSort(params) {
+//   //   console.log(params.sort())
+//   const sortass = []
+//   //   console.log([4,])
+//   const desce = []
+//   //   console.log([5])
+//   for (let index = 0; index < params.length; index++) {
+//     const element = params[index]
+//     const elementNew = params[params.length - 1]
+//     console.log(element, '00', elementNew)
+//     if (element < elementNew) {
+//       desce.push(element)
+//     } else {
+//       sortass.push(elementNew)
+//     }
+//   }
+//   return [...sortass, ...desce]
+// }
+// const arr = [4, 5, 6, 1, 10]
+// // unshift from start ---- push from end
+// console.log(quickSort(arr), '???')
+//  hosting in javscript
+
+// console.log(a)
+// var a = 'ali'
+
+// in hosting variable or function declairation in to the top but noe initialization
+// const and let never hosted but var hosted
+// myFunct()
+// function myFunct() {
+//   console.log('first')
+// }
+// function init() {
+//   var name = 'Mozilla' // name is a local variable created by init
+//   function displayName() {
+//     // displayName() is the inner function, that forms the closure
+//     console.log(name) // use variable declared in the parent function
+//   }
+//   return displayName
+// }
+// const mynew = init()
+// mynew()
+// call /bind /apply
+
+// const myobj = {
+//   name: 'aliraza',
+//   designation: 'enginner',
+// }
+
+// let newobj = function () {
+//   console.log(this.name)
+// }
+// newobj.call(myobj)
+
+// function myFunction(a, n) {
+//   return a.charAt(n - 1)
+// }
+// const mynumb = myFunction('abcd', 1)
+// console.log(mynumb)
+
+// function myFunction(a) {
+//   return typeof a
+// }
+// const ch = myFunction(false)
+// console.log(ch)
+// function myFunction(a) {
+//   return a.length === 7 ? a.slice(0, 3) : a.slice(0, 3)
+// }
+// const howto = myFunction('fgedcba')
+// const howtohi = myFunction('1234')
+// console.log(howto)
+// console.log(howtohi)
