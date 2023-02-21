@@ -303,23 +303,25 @@
 //   console.log(a % 2 === 0)
 // }
 // myFunction(-4)
-function myFunction(a, b) {
-  console.log(b.split(a).length - 1)
-  return b.split(a).length - 1
-
-  //   var count = 0
-  //   for (let index = 0; index < b.length; index++) {
-  //     const element = b[index]
-  //     if (element === a) {
-  //       count++
-  //     }
-  //   }
-  //   return count
-}
-const mynew = myFunction(
-  'm',
-  'how many times does the character occur in this sentence?',
-)
+// function myFunction(a) {
+//   a % 2 == 0 && a % 10 == 0 ? true : false
+//   //   console.log(b.split(a).length - 1)
+//   //   return b.split(a).length - 1
+//   //   var count = 0
+//   //   for (let index = 0; index < b.length; index++) {
+//   //     const element = b[index]
+//   //     if (element === a) {
+//   //       count++
+//   //     }
+//   //   }
+//   //   return count
+// }
+// const munu = myFunction(1.123)
+// console.log(munu)
+// const mynew = myFunction(
+//   'm',
+//   'how many times does the character occur in this sentence?',
+// )
 // console.log(mynew)
 // myFunction('h', 'how many times does the character occur in this sentence?')
 // const hid = myFunction(
@@ -327,3 +329,29 @@ const mynew = myFunction(
 //   'how many times does the character occur in this sentence?',
 // )
 // console.log(hid)
+// function myFunction(a) {
+//   const n = Math.floor(a)
+//   console.log(a - Math.floor(a) == 0 ? true : false)
+// }
+// // myFunction(1.123)
+// function myFunction(a, b) {
+//   console.log(a < b ? a / b : a * b)
+// }
+// // myFunction(10, 100)
+// function myFunction(a) {
+//   console.log(a.toFixed(2))
+// }
+// myFunction(2.12397)
+// myFunction(3.136)
+// myFunction(1.12397)
+// myFunction(26.1379)
+// function myFunction(a) {
+//   console.log(
+//     a
+//       .toString()
+//       .split('')
+//       .map((newnumb) => Number(newnumb)),
+//   )
+// }
+
+// myFunction(10)
