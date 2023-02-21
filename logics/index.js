@@ -269,3 +269,28 @@
 // const howtohi = myFunction('1234')
 // console.log(howto)
 // console.log(howtohi)
+// function myFunction(a) {
+//   console.log(a.indexOf('is'))
+// }
+// myFunction('praise')
+// function myFunction(a, b, c, d, e, f) {
+//   //   const len = a.length / 2
+//   //   console.log(a.slice(0, len))
+//   //   console.log(a.slice(0, -3))
+//   //   const per = (b * a) / 100
+//   //   console.log(per)
+//   const aad = a + b
+//   const sub = aad - c
+//   const mul = sub * d
+//   const div = mul / e
+
+//   console.log(Math.pow(div, 2))
+//   console.log(Math.pow(((a + b - c) * d) / e, f))
+// }
+// myFunction(6, 2, 1, 4, 2, 3)
+
+function myFunction(a, b) {
+  console.log(a + b)
+}
+
+myFunction('cheese', 'cake')
