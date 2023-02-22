@@ -413,12 +413,18 @@
 //   return str
 // }
 // myFunction(['help', 'me', 'aliraza'])
-// myFunction(['I', 'need', 'candy', 'tu'])
-function myFunction(arr) {
-  console.log(arr.every((a) => a))
-}
+// // myFunction(['I', 'need', 'candy', 'tu'])
+// function myFunction(arr) {
+//   console.log(arr.every((a) => a))
+// }
 
-myFunction([true, true, true, true])
-myFunction(['test', 'test', 'test'])
-myFunction([1, 1, 1, 2])
-myFunction(['10', 10, 10, 10])
+// myFunction([true, true, true, true])
+// myFunction(['test', 'test', 'test'])
+// myFunction([1, 1, 1, 2])
+// myFunction(['10', 10, 10, 10])
+function myFunction(...arrays) {
+  console.log([].concat(...arrays))
+}
+myFunction([1, 2, 3], [4, 5, 6])
+myFunction(['a', 'b', 'c'], [4, 5, 6])
+myFunction([true, true], [1, 2], ['a', 'b'])
