@@ -394,17 +394,31 @@
 // myFunction([10, 100, 40])
 // myFunction([10, 100, 1000])
 // myFunction([-50, 0, 50, 200])
-function myFunction(a) {
-  console.log(
-    a.reduce(function (obj, v) {
-      obj[v] = v.length
-      return obj
-    }, {}),
-  )
-  //   for (let index = 0; index < arr.length; index++) {
-  //     const element = arr[index].length
-  //     console.log(arr[index])
-  //   }
+// function myFunction(arr) {
+//   //   console.log(
+//   //     a.reduce(function (obj, v) {
+//   //       obj[v] = v.length
+//   //       return obj
+//   //     }, {}),
+//   //   )
+
+//   var str = ''
+//   for (let index = 0; index < arr.length; index++) {
+//     const newstr = arr[index]
+
+//     if (newstr.length > str.length) {
+//       str = newstr
+//     }
+//   }
+//   return str
+// }
+// myFunction(['help', 'me', 'aliraza'])
+// myFunction(['I', 'need', 'candy', 'tu'])
+function myFunction(arr) {
+  console.log(arr.every((a) => a))
 }
-myFunction(['help', 'me'])
-// myFunction(['I', 'need', 'candy'])
+
+myFunction([true, true, true, true])
+myFunction(['test', 'test', 'test'])
+myFunction([1, 1, 1, 2])
+myFunction(['10', 10, 10, 10])
