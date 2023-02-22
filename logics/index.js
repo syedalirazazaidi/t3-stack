@@ -373,8 +373,38 @@
 //   console.log(a.filter((abc) => abc !== b))
 // }
 // myFunction([1, 2, 3], 2)
-function myFunction(a) {
-  return
-}
+// function myFunction(a) {
+//   console.log(a.filter((cur) => !(cur >= 0)).length)
+// }
 
-myFunction([1, -2, 2, -4])
+// myFunction([1, -2, 2, -4])
+// myFunction([0, 9, 1])
+// myFunction([4, -3, 2, 1, 0])
+
+// function myFunction(arr) {
+//   console.log(arr.sort((a, b) => b - a))
+// }
+
+// myFunction([1, 3, 2])
+// arr.reduce((a, b) => a + b / arr.length)
+// function myFunction(arr) {
+//   console.log(Math.ceil(arr.reduce((a, b) => a + b)) / arr.length)
+// }
+// console.log(200 / 4)
+// myFunction([10, 100, 40])
+// myFunction([10, 100, 1000])
+// myFunction([-50, 0, 50, 200])
+function myFunction(a) {
+  console.log(
+    a.reduce(function (obj, v) {
+      obj[v] = v.length
+      return obj
+    }, {}),
+  )
+  //   for (let index = 0; index < arr.length; index++) {
+  //     const element = arr[index].length
+  //     console.log(arr[index])
+  //   }
+}
+myFunction(['help', 'me'])
+// myFunction(['I', 'need', 'candy'])
