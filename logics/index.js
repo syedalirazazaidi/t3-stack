@@ -355,3 +355,26 @@
 // }
 
 // myFunction(10)
+// function myFunction(a, n) {
+//   console.log(a[n - 1])
+// }
+// myFunction([1, 2, 3, 4, 5], 3)
+// myFunction([10, 9, 8, 7, 6], 5)
+// myFunction([7, 2, 1, 6, 3], 1)
+
+// function myFunction(a) {
+//   console.log(a.splice(3))
+// }
+// myFunction([1, 2, 3, 4])
+
+// myFunction([5, 4, 3, 2, 1, 0])
+// // myFunction([99, 1, 1])
+// function myFunction(a, b) {
+//   console.log(a.filter((abc) => abc !== b))
+// }
+// myFunction([1, 2, 3], 2)
+function myFunction(a) {
+  return
+}
+
+myFunction([1, -2, 2, -4])
