@@ -416,7 +416,8 @@
 // // myFunction(['I', 'need', 'candy', 'tu'])
 // function myFunction(arr) {
 //   console.log(arr.every((a) => a))
-// }
+// }ddfgdfgdf
+// ddfgdfgfdg
 
 // myFunction([true, true, true, true])
 // myFunction(['test', 'test', 'test'])
