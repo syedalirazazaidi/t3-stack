@@ -426,6 +426,28 @@
 function myFunction(...arrays) {
   console.log([].concat(...arrays))
 }
+;<VStack>
+  <UnorderedList>
+    {livestock.map((dat, index) => (
+      <ListItem
+        fontSize="40px"
+        textDecoration="none"
+        cursor="pointer"
+        listStyleType="none"
+        key={index}
+        onClick={openDropDown}
+      >
+        {' '}
+        <Button> {dat}</Button>
+      </ListItem>
+    ))}
+  </UnorderedList>
+  <Flex gap="20px">
+    <Text>Buffallo</Text>
+    <Text>Lion</Text>
+    <Text>Hen</Text>
+  </Flex>
+</VStack>
 myFunction([1, 2, 3], [4, 5, 6])
 myFunction(['a', 'b', 'c'], [4, 5, 6])
 myFunction([true, true], [1, 2], ['a', 'b'])
